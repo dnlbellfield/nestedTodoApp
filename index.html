@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hello!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="/style.css">
+
+
+  </head>  
+  <body>
+    <head>
+      <h1> Todo App</h1>
+     
+    </head>
+    
+    <section id="main">
+      <ul id="todo-list">
+      </ul>
+    </section>
+    <!-- Include Handlebars from a CDN -->
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+  <script id="todo-template" type="text/x-handlebars-template">
+  {{#this}}
+    <li data-id="{{id}}"> 
+    <div class="view">
+    <input class="toggle" type="checkbox" {{#if completed}}checked{{/if}}> 
+    <input value="{{todoText}}" find-id="{{id}}"{{#if completed}} class="completed"{{else}} class="edit"{{/if}}>
+    <button class="delete">-</button>  
+    <button class="add">+</button>
+   		</div>
+    </li>
+  {{/this}}
+  
+</script>
+    <h5>
+      press enter to start next todo <br>
+      press - to delete a todo <br>
+      press + to add a sub-todo <br>
+      create todo before trying to complete it <br>
+      check the box on the left to complete todo <br>
+    </h5>
+  <script src="/script.js" ></script>
+  
+  </body>
+</html>
